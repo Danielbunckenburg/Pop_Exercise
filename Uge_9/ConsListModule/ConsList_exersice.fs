@@ -22,3 +22,13 @@ let rec genConsList n =
         Cons(n,genConsList(n-1))
 
 
+//Define function rev: ConsList<'a> -> ConsList<'a> such that rev reverses the input list, 
+//that is, it lists its elements in reverse order.  
+
+
+let rev consList =
+    let rec helper acc lst =
+        match lst with
+        | Nil -> acc
+        | Cons (head, tail) -> helper (Cons (head, acc)) tail
+    helper Nil consList
