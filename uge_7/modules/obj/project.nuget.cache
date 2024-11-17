@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "x7FH77s3T78=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Danie\\OneDrive - University of Copenhagen\\KU\\Datalogi\\Pop\\Exercise\\uge_7\\modules\\modules.fsproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Danie\\.nuget\\packages\\fsharp.core\\8.0.400\\fsharp.core.8.0.400.nupkg.sha512"
+  ],
+  "logs": []
+}
