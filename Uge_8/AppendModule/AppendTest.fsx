@@ -16,7 +16,7 @@ let test name input expected =
         printfn "Test '%s' passed." name
     else
         printfn "Test '%s' failed. Expected: %A, Got: %A" name expected result
-
+(*
 /// Test suite for the append function
 let runTests () =
     // Case 1: Append Nil and Nil
@@ -52,4 +52,36 @@ let runTests () =
         (Cons (1, Cons (2, Cons (3, Cons (4, Nil)))))
 
 // Run the test suite
+runTests ()
+*)
+
+
+
+let test name input expected =
+    let result = appendAll input
+    if result = expected then
+        printfn "Test '%s' passed." name
+    else
+        printfn "Test '%s' failed. Expected: %A, Got: %A" name expected result
+
+let runTests () =
+    // Case 1: Empty list
+    test "Case 1" [] [] 
+
+    // Case 2: Single sublist
+    test "Case 2" [[1; 2; 3]] [1; 2; 3]
+
+    // Case 3: Multiple sublists
+    test "Case 3" [[1; 2]; [3; 4]; [5]] [1; 2; 3; 4; 5]
+
+    // Case 4: Empty sublists
+    test "Case 4" [[], []] []
+
+    // Case 5: Sublists of different lengths
+    test "Case 5" [[1]; []; [2; 3]] [1; 2; 3]
+
+    // Case 6: Nested lists (lists of lists of lists)
+    test "Case 6" [[[1; 2]], [[3; 4]]] [[1; 2]; [3; 4]]
+
+// Run all tests
 runTests ()
